@@ -6,7 +6,7 @@ declare module 'push.js' {
     class Push {
         Permission: PushPermission;
 
-        create(title: string, params?: PushNotificationParams): Promise<PushNotification>
+        create(title: string, params?: PushNotificationParams): Promise<PushNotification>;
 
         close(tag: string): void;
 
@@ -38,7 +38,8 @@ declare module 'push.js' {
         GRANTED: string;
         DENIED: string;
 
-        request(onGranted?: Function, onDenied?: Function): void;
+        request(): Promise<void>;
+        request(onGranted: () => void, onDenied?: () => void): void;
 
         has(): boolean;
 
