@@ -4,7 +4,7 @@ export default class Util {
         return obj === undefined;
     }
 
-    static isNull(obs) {
+    static isNull(obj) {
         return obj === null;
     }
 
